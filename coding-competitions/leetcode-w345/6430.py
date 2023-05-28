@@ -1,1 +1,0 @@
-../leetcode/6430.py
