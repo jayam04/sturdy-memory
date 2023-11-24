@@ -1,0 +1,18 @@
+{
+    "Test Case Loop": {
+      "prefix": "testloop",
+      "body": [
+        "testcases = int(input())",
+        "",
+        "for testcase in range(testcases):",
+        "    $0"
+      ],
+      "description": "Python loop for test cases"
+    },
+    "Get Int List from User": {
+      "prefix": "inputlist",
+      "body": ["list(map(int, input().split($1)))"],
+      "description": "todo"
+    }
+  }
+  
