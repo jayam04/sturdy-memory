@@ -19,7 +19,14 @@ def custom_read(f):
             print(line, end="")
 
 filepath = sys.argv[1] 
-contest, problem = filepath.split('/')
+filepath_splited = filepath.split('/')
+
+if len(filepath_splited) == 1:
+    contest = '.'
+else:
+    contest = '/'.join(filepath_splited[:-1])
+problem = filepath_splited[-1]
+
 
 files = os.listdir(contest)
 # print(files)
@@ -34,7 +41,7 @@ for file in files:
             with open(contest + '/' + file) as f:
                 custom_read(f)
             # print(f"Actual Output {file.split('.')[0][1:]}:")
-            print(f"-------------------------------{bcolors.OKBLUE}")
+            print(f"\n-------------------------------{bcolors.OKBLUE}")
             os.system(f"python3 {filepath}.py < {contest}/{file}")
             print(bcolors.OKGREEN, end="")
             try:
@@ -48,5 +55,3 @@ for file in files:
         # os.rename(file, problem + '.cpp')
     else:
         continue
-
-
